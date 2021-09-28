@@ -3,12 +3,13 @@ package pe.novatronic.challenge;
 import java.util.Objects;
 import  java.util.Scanner;
 
+import pe.novatronic.challenge.exception.TennisException;
 import pe.novatronic.challenge.model.Jugador;
 import pe.novatronic.challenge.service.TennisGame;
 
 public class Main {
 	
-	public static void main(String[] args) {
+	public static void main(String[] args) throws TennisException {
 		System.out.println("::::: TENNIS GAME :::::");
 		Jugador jugador1 = new Jugador(1);
 		Jugador jugador2 = new Jugador(2);

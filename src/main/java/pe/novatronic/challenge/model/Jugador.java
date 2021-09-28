@@ -40,4 +40,10 @@ public class Jugador extends Persona{
 	public void nuevoPunto() {
 		this.puntos++;
 	}
+
+	@Override
+	public String toString() {
+		return "Jugador [puntos=" + puntos + ", id=" + id + ", getNombre()=" + getNombre() + "]";
+	}
+	
 }

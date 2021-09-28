@@ -4,6 +4,7 @@ import java.util.logging.Logger;
 
 import pe.novatronic.challenge.enums.EventosEnum;
 import pe.novatronic.challenge.enums.PuntosEnum;
+import pe.novatronic.challenge.exception.TennisException;
 import pe.novatronic.challenge.model.Jugador;
 
 public class TennisGame {
@@ -19,11 +20,13 @@ public class TennisGame {
 		this.jugador2 = jugador2;
 	}
 	
-	public void actualizarScore(Integer id) {
+	public void actualizarScore(Integer id) throws TennisException {
 		if (jugador1.getId() == id) {
 			jugador1.nuevoPunto();
-		} else {
+		} else if (jugador2.getId() == id) {
 			jugador2.nuevoPunto();
+		} else {
+			throw new TennisException(1, "ID de jugador incorrecto");
 		}
 	}
 	
